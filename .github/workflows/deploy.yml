@@ -1,4 +1,4 @@
-name: React build and Upload to S3 Bucket
+name: Upload to S3 Bucket
 on: 
   push:
     branches:
