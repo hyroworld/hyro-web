@@ -48,7 +48,5 @@ jobs:
             ./artifacts s3://hyro-web/build
 
       - name: Trigger CodeDeploy
-        with:
-          aws-region: ap-northeast-2
-        run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --s3-location bucket=hyro-web,bundleType=zip,key=build.zip
+        run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --region ap-northeast-2 --s3-location bucket=hyro-web,bundleType=zip,key=build.zip
 
