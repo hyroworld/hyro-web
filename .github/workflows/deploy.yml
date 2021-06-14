@@ -31,7 +31,7 @@ jobs:
         run: mkdir ./artifacts/
 
       - name: Make zip file
-        run: zip -r ./artifacts/build.zip ./build/* ./scripts/* appspec.yml package.json
+        run: zip -qq -r ./artifacts/$GITHUB_SHA.zip ./build/* ./scripts/* appspec.yml
         shell: bash
 
       # 자격 증명
