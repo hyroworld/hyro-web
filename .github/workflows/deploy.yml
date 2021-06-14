@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Make tar file
+      - name: Make zip file
         run: zip -r ./artifacts/build.zip ./build/* ./scripts/* appspec.yml
 
         shell: bash
