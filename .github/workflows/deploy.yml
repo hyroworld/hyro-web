@@ -27,7 +27,7 @@ jobs:
         run: npm run build
 
       - name: Make tar file
-        run: tar -cpvzf target.tgz build scripts *.yml
+        run: -cvf target.tar build scripts *.yml
         shell: bash
 
       - name: Upload Build Directory
