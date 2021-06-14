@@ -10,16 +10,16 @@ phases:
     commands:
       # copy the contents of /build to S3
       - aws s3 cp --recursive --acl public-read ./build s3://hyro-web/
-      - aws s3 cp --recursive --acl public-read ./scripts s3://hyro-web/
+      - aws s3 cp --recursive --acl public-read ./scripts s3://hyro-web/sripts
 
       - aws s3 cp s3://hyro-web/ . --recursive --exclude="*" --include="*.json"
       - aws s3 cp s3://hyro-web/ . --recursive --exclude="*" --include="*.yml"
 
-      # set the cache-control headers for index.html to prevent browser caching
-      - >
-        aws s3 cp --acl public-read
-        --cache-control="max-age=0, no-cache, no-store, must-revalidate"
-        ./build/index.html s3://hyro-web/
+#      # set the cache-control headers for index.html to prevent browser caching
+#      - >
+#        aws s3 cp --acl public-read
+#        --cache-control="max-age=0, no-cache, no-store, must-revalidate"
+#        ./build/index.html s3://hyro-web/
 
 #      # invalidate the CloudFront cache for index.html
 #      # to force CloudFront to update its edge locations with the new versions
