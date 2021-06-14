@@ -43,7 +43,7 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: S3 업로드
-        run: aws s3 cp --region ap-northeast-2 ./build.zip s3://hyro-web/build/build.zip
+        run: aws s3 cp --region ap-northeast-2 ./build.zip s3://hyro-web/build
 
       - name: Trigger CodeDeploy
         env:
