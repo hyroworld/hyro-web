@@ -44,5 +44,5 @@ jobs:
           aws s3 cp \
           --recursive \
           --region ap-northeast-2 \
-          scripts s3://hyro-web/scripts
+          deploy s3://hyro-web/scripts
 
