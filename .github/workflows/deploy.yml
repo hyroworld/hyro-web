@@ -31,7 +31,7 @@ jobs:
         run: mkdir ./artifacts/
 
       - name: Make zip file
-        run: zip -r ./artifacts/build.zip ./build/* ./scripts/* appspec.yml
+        run: zip -r ./artifacts/build.zip ./build/* ./scripts/* appspec.yml package.json
         shell: bash
 
       # 자격 증명
@@ -51,13 +51,12 @@ jobs:
           aws s3 cp \
             --recursive \
             --region ap-northeast-2 \
-            ./artifacts s3://hyro-web/github-build
+            ./artifacts s3://hyro-web/build
 
-      # Trigger CodeDeploy
       - name: Trigger CodeDeploy
         env:
           AWS Access Key ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS Secret Access Key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           Default region name: 'ap-northeast-2'
-        run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --region ap-northeast-2 --s3-location bucket=hyro-web,bundleType=zip,key=github-build/build.zip
+        run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --region ap-northeast-2 --s3-location bucket=hyro-web,bundleType=zip,key=build/build.zip
 
