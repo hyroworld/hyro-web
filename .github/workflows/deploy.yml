@@ -29,7 +29,7 @@ jobs:
         run: npm run build
 
       - name: Make tar file
-        run: tar -cpvzf ./$GITHUB_SHA.tgz build script *.yml
+        run: tar -cpvzf ./$GITHUB_SHA.tgz build scripts *.yml
         shell: bash
 
       - name: Upload Build Directory
