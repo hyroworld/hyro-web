@@ -45,15 +45,6 @@ jobs:
             --region ap-northeast-2 \
             ./artifacts s3://hyro-web/build
 
-      # AWS S3에 압축파일을 전달하는 설정 및 명령어
-      - name: deploy to s3
-        uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --acl public-read --follow-symlinks --delete
-        env:
-          AWS_S3_BUCKET: ${{secrets.AWS_PRODUCTION_BUCKET_NAME}}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ap-northeast-2
-          SOURCE_DIR: './artifacts'
-          DEST_DIR: 'build/'
+      - name: Trigger CodeDeploy
+        run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --s3-location bucket=hyro-web,bundleType=zip,key=target.tgz
+
