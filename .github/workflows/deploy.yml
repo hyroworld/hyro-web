@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload
+      - name: Upload Build Directory
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -34,6 +34,25 @@ jobs:
           aws s3 cp \
             --recursive \
             --region ap-northeast-2 \
-            build s3://hyro-web/build \
-            appspec.yml s3://hyro-web \
+            build s3://hyro-web/build
+
+        - name: Upload appspec.yml
+          env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          run: |
+            aws s3 cp \
+            --recursive \
+            --region ap-northeast-2 \
+            appspec.yml s3://hyro-web
+
+        - name: Upload Build Scripts Directory
+          env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          run: |
+            aws s3 cp \
+            --recursive \
+            --region ap-northeast-2 \
             scripts s3://hyro-web/scripts
+
