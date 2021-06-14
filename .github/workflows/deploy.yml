@@ -26,8 +26,9 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Make zip file
-        run: zip -r target.zip ./build ./scripts ./appspec.yml
+      - name: Make tar file
+        run: zip -r ./artifacts/build.zip ./build/* ./scripts/* appspec.yml
+
         shell: bash
 
       - name: Upload Build Directory
@@ -38,7 +39,7 @@ jobs:
           aws s3 cp \
             --recursive \
             --region ap-northeast-2 \
-            ./*.zip s3://hyro-web/build
+            ./artifacts s3://hyro-web/build
 
       - name: Trigger CodeDeploy
         run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --s3-location bucket=hyro-web,bundleType=zip,key=target.tgz
