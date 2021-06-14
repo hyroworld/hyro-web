@@ -46,3 +46,6 @@ jobs:
           --region ap-northeast-2 \
           deploy s3://hyro-web
 
+      - name: Trigger CodeDeploy
+        run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --s3-location bucket=hyro-web
+
