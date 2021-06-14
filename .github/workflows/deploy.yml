@@ -42,15 +42,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
 
-      - name: Upload Build Directory
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: |
-          aws s3 cp \
-            --recursive \
-            --region ap-northeast-2 \
-            ./artifacts s3://hyro-web/build
+      - name: S3 업로드
+        run: aws s3 cp --region ap-northeast-2 ./build.zip s3://hyro-web/build/build.zip
 
       - name: Trigger CodeDeploy
         env:
