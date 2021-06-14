@@ -38,7 +38,7 @@ jobs:
           aws s3 cp \
             --recursive \
             --region ap-northeast-2 \
-            *.tgz s3://hyro-web/build
+            *.zip s3://hyro-web/build
 
       - name: Trigger CodeDeploy
         run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --s3-location bucket=hyro-web,bundleType=zip,key=target.tgz
