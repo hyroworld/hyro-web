@@ -26,8 +26,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Make tar file
-        run: tar -cpvzf ./$GITHUB_SHA.tgz build scripts *.yml
+      - name: Make zip file
+        run: zip -r target.zip ./build ./scripts ./appspec.yml
         shell: bash
 
       - name: Upload Build Directory
@@ -41,5 +41,5 @@ jobs:
             *.tgz s3://hyro-web/build
 
       - name: Trigger CodeDeploy
-        run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --s3-location bucket=hyro-web,bundleType=tgz,key=build/$GITHUB_SHA.tgz
+        run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --s3-location bucket=hyro-web,bundleType=zip,key=target.tgz
 
