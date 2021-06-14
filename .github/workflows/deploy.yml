@@ -27,7 +27,7 @@ jobs:
         run: npm run build
 
       - name: Make tar file
-        run: -cvf target.tar build scripts *.yml
+        run: tar -cpvzf ./$GITHUB_SHA.tgz build scripts *.yml
         shell: bash
 
       - name: Upload Build Directory
@@ -38,8 +38,8 @@ jobs:
           aws s3 cp \
             --recursive \
             --region ap-northeast-2 \
-            target.tgz s3://hyro-web/build
+            ./$GITHUB_SHA.tgz s3://hyro-web/build
 
       - name: Trigger CodeDeploy
-        run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --s3-location bucket=hyro-web,bundleType=tgz
+        run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --s3-location bucket=hyro-web,bundleType=tgz,key=build/$GITHUB_SHA.tgz
 
