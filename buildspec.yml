@@ -11,8 +11,8 @@ phases:
       # copy the contents of /build to S3
       - aws s3 cp --recursive --acl public-read ./build s3://hyro-web/
       - aws s3 cp --recursive --acl public-read ./scripts s3://hyro-web/
-      - aws s3 cp --recursive --acl public-read appspec.yml s3://hyro-web/
-      - aws s3 cp --recursive --acl public-read package.json s3://hyro-web/
+      - aws s3 cp --recursive --acl public-read '*.yml' s3://hyro-web/
+      - aws s3 cp --recursive --acl public-read '*.json' s3://hyro-web/
 
 
       # set the cache-control headers for index.html to prevent browser caching
