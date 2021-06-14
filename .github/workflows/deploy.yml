@@ -1,6 +1,4 @@
 name: Upload to S3 Bucket
-env:
-  PROJECT_NAME: hyro-web
 on: 
   push:
     branches:
@@ -43,5 +41,5 @@ jobs:
             ./$GITHUB_SHA.tgz s3://hyro-web/build
 
       - name: Trigger CodeDeploy
-        run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --s3-location bucket=hyro-web,bundleType=tgz,key=$PROJECT_NAME/$GITHUB_SHA.tgz
+        run: aws deploy create-deployment --application-name hyro-web-code-deploy --file-exists-behavior OVERWRITE --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name hyro-web-deploy-group --s3-location bucket=hyro-web,bundleType=tgz,key=$GITHUB_SHA.tgz
 
