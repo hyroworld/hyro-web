@@ -26,6 +26,10 @@ jobs:
       - name: Build
         run: npm run build
 
+      # 폴더 생성
+      - name: make artifacts dir
+        run: mkdir ./artifacts/
+
       - name: Make zip file
         run: zip -r ./artifacts/build.zip ./build/* ./scripts/* appspec.yml
 
