@@ -3,15 +3,16 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/hyro
-    overwrite: yes
-permissions:
-  - object: /home/ec2-user/hyro
-    owner: ec2-user
-    group: ec2-user
-    mode: 755
-
 hooks:
-  AfterInstall:
-    - location: scripts/deploy.sh
-      timeout: 60
+  ApplicationStop:
+    - location: srcipts/stop_server.sh
+      timeout: 300
+      runas: ec2-user
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: ec2-user
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      timeout: 300
       runas: ec2-user
