@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# navigate to HYRO APP DIR
+sudo rm -rf /home/ec2-user/hyro
+mkdir /home/ec2-user/hyro
+cd /home/ec2-user/hyro
+
 # install nodejs@14.x
 curl -sL https://rpm.nodesource.com/setup_14.x | sudo -E bash -
 sudo yum install -y nodejs
@@ -10,11 +15,6 @@ sudo yum install -y nodejs
 
 # # active yarn
 # source /home/ec2-user/.bashrc
-
-# navigate to HYRO APP DIR
-sudo rm -rf /home/ec2-user/hyro
-mkdir /home/ec2-user/hyro
-cd /home/ec2-user/hyro
 
 # install HYRO APP
 yarn install
