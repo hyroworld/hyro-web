@@ -1,32 +1,25 @@
-version: 0.1
+version: 0.2
 phases:
-  pre_build:
+  install:
+    runtime-versions:
+      nodejs: 12
     commands:
+      - echo Installing app dependencies...
       - npm install
   build:
     commands:
+      - echo Building static site...
       - npm run build
-  post_build:
-    commands:
-      # copy the contents of /build to S3
-      - aws s3 cp --recursive --acl public-read ./build s3://hyro-web/
-      - aws s3 cp --recursive --acl public-read ./scripts s3://hyro-web/scripts
 
-      - aws s3 cp s3://hyro-web/ . --recursive --exclude="*" --include="*.json"
-      - aws s3 cp s3://hyro-web/ . --recursive --exclude="*" --include="*.yml"
-
-#      # set the cache-control headers for index.html to prevent browser caching
-#      - >
-#        aws s3 cp --acl public-read
-#        --cache-control="max-age=0, no-cache, no-store, must-revalidate"
-#        ./build/index.html s3://hyro-web/
-
-#      # invalidate the CloudFront cache for index.html
-#      # to force CloudFront to update its edge locations with the new versions
-#      - >
-#        aws cloudfront create-invalidation --distribution-id <Your Cloudfront ID>
-#        --paths /index.html
 artifacts:
   files:
-    - '**/*'
-  base-directory: build
+    - build/**/*
+    - public/**/*
+    - package.json
+    - appspec.yml
+    - scripts/**/*
+  base-directory: ./
+
+cache:
+  paths:
+    - './node_modules/**/*'
