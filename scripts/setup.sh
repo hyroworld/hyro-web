@@ -19,6 +19,9 @@ source /home/ec2-user/.bashrc
 # install HYRO APP
 yarn install
 
+# install static server
+yarn global add serve
+
 # kill exist server
 pm2 kill
 
