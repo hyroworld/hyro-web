@@ -13,4 +13,4 @@ yarn global add pm2
 pm2 kill
 
 # start server
-pm2 serve hyro/build --name "HYRO" 
+pm2 serve hyro/build --name "HYRO" --spa
