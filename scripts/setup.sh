@@ -20,8 +20,10 @@ source /home/ec2-user/.bashrc
 yarn install
  
 # change permission build directory
-sudo chown -R ec2-user:ec2-user /home/ec2-user/hyro/build 
+cd /home/ec2-user/hyro
+sudo chown -R ec2-user:ec2-user build 
 
 # start server
+pm2 kill
 pm2 serve build 8080 --spa
 # pm2 start /home/ec2-user/hyro/node_modules/react-scripts/scripts/start.js --name "HYRO"
