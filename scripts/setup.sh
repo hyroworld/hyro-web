@@ -20,7 +20,7 @@ source /home/ec2-user/.bashrc
 yarn install
  
 # change permission build directory
-sudo chown ec2-user:ec2-user /home/ec2-user/hyro/build 
+sudo chown -R ec2-user:ec2-user /home/ec2-user/hyro/build 
 
 # start server
 pm2 serve build 8080 --spa
