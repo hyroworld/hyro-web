@@ -12,5 +12,9 @@ yarn global add pm2
 # kill exist server
 pm2 kill
 
+# kill nginx server
+sudo systemctl stop nginx
+
 # start server
 pm2 serve hyro/build --name "HYRO" --spa
+sudo systemctl start nginx
