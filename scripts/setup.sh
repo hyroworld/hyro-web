@@ -19,12 +19,12 @@ source /home/ec2-user/.bashrc
 # install HYRO APP
 yarn install
 
+# change permission build directory
+cd ~
+sudo chown -R ec2-user:ec2-user hyro 
+
 # kill exist server
 pm2 kill
-
-# change permission build directory
-cd /home/ec2-user/hyro
-sudo chown -R ec2-user build 
 
 # start server
 pm2 serve build 8080 --spa --name "HYRO"
