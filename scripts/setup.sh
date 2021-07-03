@@ -10,8 +10,8 @@ curl -sL https://rpm.nodesource.com/setup_14.x | sudo -E bash -
 sudo yum install -y nodejs
 
 
-# # install yarn: current user only
-# curl -o- -L https://yarnpkg.com/install.sh | bash
+# install yarn: current user only
+curl -o- -L https://yarnpkg.com/install.sh | bash
 
 # # active yarn
 # source /home/ec2-user/.bashrc
