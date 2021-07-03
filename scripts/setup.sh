@@ -18,6 +18,3 @@ source /home/ec2-user/.bashrc
 
 # install HYRO APP
 yarn install
-
-# kill exist server
-pm2 kill
