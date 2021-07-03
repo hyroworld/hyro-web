@@ -26,4 +26,4 @@ sudo chown -R ec2-user:ec2-user hyro
 pm2 kill
 
 # start server
-pm2 serve hyro/build 8080 --spa --name "HYRO"
+pm2 serve hyro/build 8080 --spa --name "HYRO" --env production
