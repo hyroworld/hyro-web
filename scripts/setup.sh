@@ -23,4 +23,5 @@ yarn install
 pm2 kill
 
 # start server
-pm2 serve build 8080 --spa --name "HYRO" --env production
+# pm2 serve build 8080 --spa --name "HYRO" --env production
+yarn start:prod

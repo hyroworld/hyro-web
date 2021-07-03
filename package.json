@@ -15,6 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "start:prod": "pm2 serve build 8080 --spa --name HYRO",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
