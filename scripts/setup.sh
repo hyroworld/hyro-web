@@ -25,5 +25,5 @@ sudo chown -R ec2-user:ec2-user build
 
 # start server
 pm2 kill
-pm2 serve build 8080 --spa
+pm2 serve build 8080 --spa --name "HYRO"
 # pm2 start /home/ec2-user/hyro/node_modules/react-scripts/scripts/start.js --name "HYRO"
