@@ -18,10 +18,8 @@ source /home/ec2-user/.bashrc
 
 # install HYRO APP
 yarn install
-
-# install pm2
-yarn global add pm2 
+ 
 
 # start server
-# pm2 serve build 8080 --spa
-pm2 start /home/ec2-user/hyro/node_modules/react-scripts/scripts/start.js --name "HYRO"
+pm2 serve build 8080 --spa
+# pm2 start /home/ec2-user/hyro/node_modules/react-scripts/scripts/start.js --name "HYRO"
