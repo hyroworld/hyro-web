@@ -21,7 +21,3 @@ yarn install
 
 # kill exist server
 pm2 kill
-
-# start server
-pm2 serve build 8080 --spa
-pm2 restart 0 --name "HYRO"
