@@ -1,10 +1,12 @@
 import React from 'react'
+import DesktopHeader from '../components/layout/DesktopHeader'
+import DesktopNavigation from '../components/layout/DesktopNavigation'
 
 const DesktopLayout = () => {
     return (
         <div>
-            <h1>Hyro</h1>
-            <em>desktop</em>
+            <DesktopHeader />
+            <DesktopNavigation />
         </div>
     )
 }

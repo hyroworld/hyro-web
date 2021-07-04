@@ -1,10 +1,12 @@
 import React from 'react'
+import MobileHeader from '../components/layout/MobileHeader'
+import MobileNavigation from '../components/layout/MobileNavigation'
 
 const MobileLayout = () => {
     return (
         <div>
-            <h1>Hyro</h1>
-            <em>mobile</em>
+            <MobileHeader />
+            <MobileNavigation />
         </div>
     )
 }
