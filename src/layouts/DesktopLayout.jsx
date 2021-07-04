@@ -3,7 +3,8 @@ import React from 'react'
 const DesktopLayout = () => {
     return (
         <div>
-            <span>Desktop Layout</span>
+            <h1>Hyro</h1>
+            <em>desktop</em>
         </div>
     )
 }

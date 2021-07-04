@@ -3,7 +3,8 @@ import React from 'react'
 const MobileLayout = () => {
     return (
         <div>
-            <span>Mobile Layout</span>
+            <h1>Hyro</h1>
+            <em>mobile</em>
         </div>
     )
 }
