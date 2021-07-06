@@ -1,20 +1,16 @@
+/** @format */
+
 import React from "react";
-import { useState } from "react";
-import { Avatar, SideSheet, Paragraph, Button, Position } from "evergreen-ui";
+import { Avatar } from "evergreen-ui";
+import NavigatiomCustom from "../customs/navigation/NavigatiomCustom";
 
 const MobileNavigation = () => {
-  const [isShown, setIsShown] = useState(false);
-
+  const toggleNav = () => {};
   return (
     <>
-      <SideSheet
-        isShown={isShown}
-        position={Position.BOTTOM}
-        onCloseComplete={() => setIsShown(false)}>
-        <Paragraph margin={40}>Basic Example</Paragraph>
-      </SideSheet>
+      <NavigatiomCustom />
       <Avatar
-        onClick={() => setIsShown(true)}
+        onClick={toggleNav}
         src='https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg'
         name='Alan Turing'
         size={40}
