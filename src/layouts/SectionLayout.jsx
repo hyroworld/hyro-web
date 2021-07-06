@@ -5,7 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import MainPage from '../pages/MainPage';
 import PostPage from '../pages/PostPage';
 
-const ContainerLayout = () => {
+const SectionLayout = () => {
     return (
         <main>
             <Switch>
@@ -22,4 +22,4 @@ const ContainerLayout = () => {
     )
 }
 
-export default ContainerLayout
+export default SectionLayout
