@@ -2,8 +2,11 @@
 
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Position, SideSheet } from "evergreen-ui";
+import { Drawer, Divider } from "antd";
 import { setNavFlag } from "../../utils/reducers/globalReducer";
+
+// Components
+import NavItemList from "../common/NavItemList";
 
 const MobileNavigation = () => {
   // connection to store
@@ -13,12 +16,14 @@ const MobileNavigation = () => {
   const dispatch = useDispatch();
 
   return (
-    <>
-      <SideSheet
-        isShown={navFlag}
-        position={Position.BOTTOM}
-        onCloseComplete={() => dispatch(setNavFlag(false))}></SideSheet>
-    </>
+    <Drawer
+      placement={"bottom"}
+      closable={false}
+      onClose={() => dispatch(setNavFlag(false))}
+      visible={navFlag}>
+      <NavItemList />
+      <Divider />
+    </Drawer>
   );
 };
 

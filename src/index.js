@@ -8,6 +8,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 
 // import Scss
+import "antd/dist/antd.css";
 import "./assets/scss/main.scss";
 
 // import Redux and Redux Saga

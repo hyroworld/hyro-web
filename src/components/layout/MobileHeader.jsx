@@ -2,7 +2,6 @@
 
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Button } from "evergreen-ui";
 import { setNavFlag } from "../../utils/reducers/globalReducer";
 
 const MobileHeader = () => {
@@ -14,13 +13,7 @@ const MobileHeader = () => {
 
   return (
     <header>
-      <Button
-        className='custom-button'
-        onClick={() => dispatch(setNavFlag(!navFlag))}
-        marginRight={0}
-        appearance='minimal'>
-        HYRO
-      </Button>
+      <span onClick={() => dispatch(setNavFlag(!navFlag))}>😋</span>
     </header>
   );
 };
