@@ -5,7 +5,7 @@ import React from "react";
 const NavItem = () => {
   return (
     <div>
-      <span>fuck</span>
+      <span>information</span>
     </div>
   );
 };
