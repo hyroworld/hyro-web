@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PostPage = () => {
+const Posts = () => {
     return (
         <div>
             <h3>Post List</h3>
@@ -8,4 +8,4 @@ const PostPage = () => {
     )
 }
 
-export default PostPage
+export default Posts

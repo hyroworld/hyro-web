@@ -1,5 +1,3 @@
-/** @format */
-
 import { createAction, createReducer } from "@reduxjs/toolkit";
 
 // 액션 이름 상수 선언
@@ -21,7 +19,7 @@ export default createReducer(initialState, {
   [SET_NAV_FLAG]: (state, { payload: flag }) => {
     state["NAV_FLAG"] = flag;
   },
-  [SET_SECOND_NAV_FLAG]: (state, {payload: flag}) => {
+  [SET_SECOND_NAV_FLAG]: (state, { payload: flag }) => {
     state["SECOND_NAV_FLAG"] = flag;
   }
 });
