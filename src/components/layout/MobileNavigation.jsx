@@ -6,7 +6,7 @@ import { Drawer, Divider } from "antd";
 import { setNavFlag } from "../../utils/reducers/globalReducer";
 
 // Components
-import NavItemList from "../common/NavItemList";
+import NavItemList from "../navigation/NavItemList";
 
 const MobileNavigation = () => {
   // connection to store
