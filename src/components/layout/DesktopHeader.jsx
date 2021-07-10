@@ -22,7 +22,7 @@ const DesktopHeader = () => {
               subTitle="Everything begins with your stance. Remember."
           />
           <div className="logo-wrapper" onClick={() => dispatch(setNavFlag(!navFlag))}>
-              <Cat height={48} fill={'#0102fe'}/>
+              <Cat width={48} height={48} fill={'#0102fe'}/>
           </div>
       </header>
   );

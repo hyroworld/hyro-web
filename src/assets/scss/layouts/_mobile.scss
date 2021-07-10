@@ -2,13 +2,16 @@
 .header-container-mb {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: auto;
   padding-top: 1rem;
 
   .logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-basis: 48px;
     width: 100%;
 
@@ -32,3 +35,7 @@
 }
 
 /* Mobile Navigation */
+.navigation-container-mb {
+}
+
+/* Mobile Navigation Item */

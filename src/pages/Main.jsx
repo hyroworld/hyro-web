@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MainPage = () => {
+const Main = () => {
     return (
         <div>
             <h3>Main Page</h3>
@@ -8,4 +8,4 @@ const MainPage = () => {
     )
 }
 
-export default MainPage
+export default Main
