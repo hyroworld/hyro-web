@@ -1,0 +1,24 @@
+.header-container-dk {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+
+  .title-wrapper {
+    width: auto;
+  }
+
+  .logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 48px;
+    width: 100%;
+
+    :hover {
+      cursor: crosshair;
+    }
+  }
+}

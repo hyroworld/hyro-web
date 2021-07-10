@@ -1,1 +1,16 @@
-/* evergreenUI custom */
+/* reset antd component default value */
+
+// page header
+.ant-page-header {
+  padding: 0;
+}
+
+// page header back btn
+.ant-page-header-back-button {
+  color: #0102fe;
+
+  :hover {
+    color: #0102fe;
+    cursor: crosshair;
+  }
+}
