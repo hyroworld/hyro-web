@@ -1,8 +1,6 @@
-/** @format */
-
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Drawer, Divider } from "antd";
+import { Drawer } from "antd";
 import { setNavFlag } from "../../utils/reducers/globalReducer";
 
 // Components
@@ -16,14 +14,15 @@ const MobileNavigation = () => {
   const dispatch = useDispatch();
 
   return (
-    <Drawer
-      placement={"bottom"}
-      closable={false}
-      onClose={() => dispatch(setNavFlag(false))}
-      visible={navFlag}>
-      <NavItemList />
-      <Divider />
-    </Drawer>
+      <nav className="navigation-container-mb">
+        <Drawer
+          placement={"bottom"}
+          closable={false}
+          onClose={() => dispatch(setNavFlag(false))}
+          visible={navFlag}>
+          <NavItemList />
+        </Drawer>
+      </nav>
   );
 };
 

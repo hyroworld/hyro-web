@@ -14,3 +14,20 @@
     cursor: crosshair;
   }
 }
+
+// navigation style reset
+.ant-drawer-mask {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.ant-drawer-content {
+  background-color: rgba(0, 0, 0, 0);
+}
+.ant-drawer-body {
+  padding: 20px;
+}
+.ant-drawer-bottom.ant-drawer-open .ant-drawer-content-wrapper,
+.ant-drawer-right.ant-drawer-open .ant-drawer-content-wrapper {
+  // navigation(아래, 오른쪽) 오픈 시 그림자 효과 삭제
+  box-shadow: none;
+}

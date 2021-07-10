@@ -14,7 +14,7 @@ const MobileHeader = () => {
   return (
     <header className="header-container-mb">
       <div className="logo-wrapper" onClick={() => dispatch(setNavFlag(!navFlag))}>
-          <Cat height={48} fill={'#0102fe'}/>
+          <Cat width={48} height={48} fill={'#0102fe'}/>
       </div>
       <div className="title-wrapper">
           <span>HYRO</span>
