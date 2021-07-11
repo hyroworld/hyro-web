@@ -1,5 +1,13 @@
-/* Main Container */
+/* Main Container : every page have this style */
+.main-container {
+  // 껍데기: margin, padding top 없음.
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 20px;
+  margin: 0;
+}
 
 
-
-/* Section Container Style */
+/* Section Container Style : more detail things */

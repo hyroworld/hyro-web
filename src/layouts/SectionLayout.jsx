@@ -10,7 +10,7 @@ import Ask from "../pages/Ask";
 
 const SectionLayout = () => {
     return (
-        <main>
+        <main className="main-container">
             <Switch>
                 {/* Main */}
                 <Route exact path="/">
