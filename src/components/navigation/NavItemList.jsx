@@ -1,16 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Enum from "enum";
+import { primaryRoute } from "../../configs/routeConfig";
 
-const pageConfig = new Enum({
-  MAIN: ["/", "MAIN"],
-  INFO: ["/info", "INFORMATION"],
-  POST: ["/posts", "POSTS"],
-  CONTACT: ["/contact", "CONTACT"],
-  ASK: ["/ask", "ASK"],
-});
-
-const navList = pageConfig.enums.map((nav) => {
+// generate navigation items
+const navList = primaryRoute.enums.map((nav) => {
   return (
     <li key={nav.key}>
       <Link to={nav.value[0]}>{nav.value[1]}</Link>
@@ -18,6 +11,7 @@ const navList = pageConfig.enums.map((nav) => {
   );
 });
 
+// render
 const NavItemList = () => {
   return (
     <nav>
