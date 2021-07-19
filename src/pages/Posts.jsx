@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setPrimaryRoute } from "../utils/reducers/routesReducer";
+import { setNavFlag } from "../utils/reducers/globalReducer";
 
 const Posts = () => {
-    return (
-        <div>
-            <h3>Post List</h3>
-        </div>
-    )
-}
+  // 상수 선언
+  const dispatch = useDispatch();
 
-export default Posts
+  // set primary route
+  useEffect(() => {
+    dispatch(setPrimaryRoute("posts"));
+    dispatch(setNavFlag(false));
+  }, []);
+
+  return (
+    <div>
+      <h3>Post List</h3>
+    </div>
+  );
+};
+
+export default Posts;

@@ -1,11 +1,11 @@
 /* reset antd component default value */
 
-// page header
+/* page header */
 .ant-page-header {
   padding: 0;
 }
 
-// page header back btn
+/* page header back btn */
 .ant-page-header-back-button {
   color: #0102fe;
 
@@ -15,7 +15,7 @@
   }
 }
 
-// navigation style reset
+/* navigation style reset */
 .ant-drawer-mask {
   background-color: rgba(0, 0, 0, 0);
 }
@@ -25,6 +25,11 @@
 }
 .ant-drawer-body {
   padding: 20px;
+
+  // navigation font color
+  a {
+    color: mediumblue;
+  }
 }
 .ant-drawer-bottom.ant-drawer-open .ant-drawer-content-wrapper,
 .ant-drawer-right.ant-drawer-open .ant-drawer-content-wrapper {

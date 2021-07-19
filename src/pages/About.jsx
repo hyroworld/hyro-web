@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setPrimaryRoute } from "../utils/reducers/routesReducer";
+import { setNavFlag } from "../utils/reducers/globalReducer";
 
 const About = () => {
-    return (
-        <div>
-            <h3>About Me Page</h3>
-        </div>
-    )
-}
+  // 상수 선언
+  const dispatch = useDispatch();
 
-export default About
+  // set primary route
+  useEffect(() => {
+    dispatch(setPrimaryRoute("about"));
+    dispatch(setNavFlag(false));
+  }, []);
+  return (
+    <div>
+      <h3>About Me Page</h3>
+    </div>
+  );
+};
+
+export default About;

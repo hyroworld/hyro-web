@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setPrimaryRoute } from "../utils/reducers/routesReducer";
+import { setNavFlag } from "../utils/reducers/globalReducer";
 
 const Ask = () => {
-    return (
-        <div>
-            <h3>Ask Page</h3>
-        </div>
-    )
-}
+  // 상수 선언
+  const dispatch = useDispatch();
 
-export default Ask
+  // set primary route
+  useEffect(() => {
+    dispatch(setPrimaryRoute("ask"));
+    dispatch(setNavFlag(false));
+  }, []);
+
+  return (
+    <div>
+      <h3>Ask Page</h3>
+    </div>
+  );
+};
+
+export default Ask;
