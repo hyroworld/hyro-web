@@ -11,7 +11,7 @@ const Posts = () => {
   useEffect(() => {
     dispatch(setPrimaryRoute("posts"));
     dispatch(setNavFlag(false));
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

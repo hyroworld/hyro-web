@@ -11,7 +11,7 @@ const Contact = () => {
   useEffect(() => {
     dispatch(setPrimaryRoute("contact"));
     dispatch(setNavFlag(false));
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
