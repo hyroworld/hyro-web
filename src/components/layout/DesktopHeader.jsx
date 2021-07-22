@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {setNavFlag} from "../../utils/reducers/globalReducer";
 import {PageHeader} from "antd";
-import {ReactComponent as Cat} from "../../assets/svgs/cat.svg";
+import {ReactComponent as Bird} from "../../assets/svgs/bird.svg";
 
 
 const DesktopHeader = () => {
@@ -22,7 +22,8 @@ const DesktopHeader = () => {
               subTitle="Everything begins with your stance. Remember."
           />
           <div className="logo-wrapper" onClick={() => dispatch(setNavFlag(!navFlag))}>
-              <Cat width={48} height={48} fill={'#0102fe'}/>
+              <Bird width={100} height={100} fill={'#0102fe'}/>
+
           </div>
       </header>
   );

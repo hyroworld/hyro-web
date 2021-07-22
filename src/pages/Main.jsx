@@ -11,7 +11,7 @@ const Main = () => {
   useEffect(() => {
     dispatch(setPrimaryRoute("main"));
     dispatch(setNavFlag(false));
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

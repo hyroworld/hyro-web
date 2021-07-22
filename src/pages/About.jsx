@@ -11,7 +11,7 @@ const About = () => {
   useEffect(() => {
     dispatch(setPrimaryRoute("about"));
     dispatch(setNavFlag(false));
-  }, []);
+  }, [dispatch]);
   return (
     <div>
       <h3>About Me Page</h3>

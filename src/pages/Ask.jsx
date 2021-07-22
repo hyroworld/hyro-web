@@ -11,7 +11,7 @@ const Ask = () => {
   useEffect(() => {
     dispatch(setPrimaryRoute("ask"));
     dispatch(setNavFlag(false));
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
