@@ -14,7 +14,6 @@
     align-items: center;
     flex-basis: 48px;
     width: 100%;
-    z-index: 999;
 
     :hover {
       cursor: crosshair;
@@ -29,7 +28,7 @@
 
   //  font design
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 100;
 
   }
 
