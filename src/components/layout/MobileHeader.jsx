@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setNavFlag } from "../../utils/reducers/globalReducer";
 
-import { ReactComponent as Cat } from "../../assets/svgs/cat.svg";
 import { ReactComponent as Bird } from "../../assets/svgs/bird.svg";
 
 const MobileHeader = () => {
