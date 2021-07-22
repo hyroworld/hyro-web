@@ -14,6 +14,7 @@
     align-items: center;
     flex-basis: 48px;
     width: 100%;
+    z-index: 999;
 
     :hover {
       cursor: crosshair;
