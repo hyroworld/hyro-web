@@ -1,5 +1,3 @@
-/** @format */
-
 import React from "react";
 import MobileHeader from "../components/layout/MobileHeader";
 import MobileNavigation from "../components/layout/MobileNavigation";
