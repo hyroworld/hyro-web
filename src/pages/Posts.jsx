@@ -15,7 +15,7 @@ const Posts = () => {
 
   return (
     <div>
-      <h3>Post List</h3>
+      <h3>Post List 준비중</h3>
     </div>
   );
 };

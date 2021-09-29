@@ -15,7 +15,7 @@ const Ask = () => {
 
   return (
     <div>
-      <h3>Ask Page</h3>
+      <h3>Ask 준비중</h3>
     </div>
   );
 };

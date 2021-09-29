@@ -15,7 +15,7 @@ const Main = () => {
 
   return (
     <div>
-      <h3>Main Page</h3>
+      <h3>Main 준비중</h3>
     </div>
   );
 };

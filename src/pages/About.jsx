@@ -14,7 +14,7 @@ const About = () => {
   }, [dispatch]);
   return (
     <div>
-      <h3>About Me Page</h3>
+      <h3>About 준비중</h3>
     </div>
   );
 };

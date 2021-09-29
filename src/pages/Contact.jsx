@@ -15,7 +15,7 @@ const Contact = () => {
 
   return (
     <div>
-      <h3>Contact Page</h3>
+      <h3>Contact 준비중</h3>
     </div>
   );
 };

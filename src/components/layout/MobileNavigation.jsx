@@ -7,6 +7,7 @@ import { setNavFlag } from "../../utils/reducers/globalReducer";
 import NavItemList from "../navigation/NavItemList";
 
 const MobileNavigation = () => {
+
   // connection to store
   const navFlag = useSelector((state) => state.globalReducer.NAV_FLAG);
 
